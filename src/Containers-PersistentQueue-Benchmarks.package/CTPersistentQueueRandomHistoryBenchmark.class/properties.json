@@ -1,0 +1,14 @@
+{
+	"commentStamp" : "",
+	"super" : "CTPersistentQueueAbstractBenchmark",
+	"category" : "Containers-PersistentQueue-Benchmarks",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"history",
+		"randomIndices"
+	],
+	"name" : "CTPersistentQueueRandomHistoryBenchmark",
+	"type" : "normal"
+}
