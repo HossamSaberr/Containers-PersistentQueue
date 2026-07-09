@@ -1,0 +1,13 @@
+{
+	"commentStamp" : "",
+	"super" : "TestCase",
+	"category" : "Containers-PersistentQueue-Tests",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"emptyQueue"
+	],
+	"name" : "CTPersistentQueueTest",
+	"type" : "normal"
+}
