@@ -1,0 +1,11 @@
+{
+	"commentStamp" : "",
+	"super" : "CTPersistentStackNode",
+	"category" : "Containers-PersistentQueue",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "CTPersistentEmptyNode",
+	"type" : "normal"
+}
