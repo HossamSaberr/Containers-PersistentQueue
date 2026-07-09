@@ -1,0 +1,14 @@
+{
+	"commentStamp" : "",
+	"super" : "Object",
+	"category" : "Containers-PersistentQueue",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"frontStack",
+		"rearStack"
+	],
+	"name" : "CTPersistentQueue",
+	"type" : "normal"
+}
