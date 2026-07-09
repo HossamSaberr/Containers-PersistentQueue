@@ -1,0 +1,13 @@
+{
+	"commentStamp" : "",
+	"super" : "Object",
+	"category" : "Containers-PersistentQueue-Benchmarks",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"block"
+	],
+	"name" : "CTPersistentQueueBenchmarker",
+	"type" : "normal"
+}
