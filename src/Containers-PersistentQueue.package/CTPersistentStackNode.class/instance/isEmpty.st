@@ -1,3 +1,0 @@
-adding
-isEmpty
-    ^ self subclassResponsibility
