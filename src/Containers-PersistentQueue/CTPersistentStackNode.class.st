@@ -5,12 +5,12 @@ Class {
 	#package : 'Containers-PersistentQueue'
 }
 
-{ #category : 'adding' }
+{ #category : 'controlling' }
 CTPersistentStackNode >> ifEmpty: emptyBlock ifNotEmpty: notEmptyBlock [
     ^ self subclassResponsibility
 ]
 
-{ #category : 'adding' }
+{ #category : 'testing' }
 CTPersistentStackNode >> isEmpty [
     ^ self subclassResponsibility
 ]
@@ -20,12 +20,12 @@ CTPersistentStackNode >> push: anObject [
     ^ CTPersistentValueNode value: anObject next: self
 ]
 
-{ #category : 'adding' }
+{ #category : 'private' }
 CTPersistentStackNode >> reverseOnto: anAccumulatorNode [
     ^ self subclassResponsibility
 ]
 
-{ #category : 'adding' }
+{ #category : 'converting' }
 CTPersistentStackNode >> reversed [
     "Initiate the functional reversal with an empty accumulator"
     ^ self reverseOnto: CTPersistentEmptyNode new

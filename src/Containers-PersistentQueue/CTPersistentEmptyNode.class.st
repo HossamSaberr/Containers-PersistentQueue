@@ -5,7 +5,7 @@ Class {
 	#package : 'Containers-PersistentQueue'
 }
 
-{ #category : 'testing' }
+{ #category : 'controlling' }
 CTPersistentEmptyNode >> ifEmpty: emptyBlock ifNotEmpty: notEmptyBlock [
     ^ emptyBlock value
 ]
@@ -15,7 +15,7 @@ CTPersistentEmptyNode >> isEmpty [
     ^ true
 ]
 
-{ #category : 'testing' }
+{ #category : 'private' }
 CTPersistentEmptyNode >> reverseOnto: anAccumulatorNode [
     "Base case: end of the list. Return the accumulated reversed list."
     ^ anAccumulatorNode

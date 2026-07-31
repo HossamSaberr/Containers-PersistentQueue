@@ -14,7 +14,7 @@ CTPersistentValueNode class >> value: anObject next: aNode [
     ^ self new initializeValue: anObject next: aNode
 ]
 
-{ #category : 'initialization' }
+{ #category : 'controlling' }
 CTPersistentValueNode >> ifEmpty: emptyBlock ifNotEmpty: notEmptyBlock [
     ^ notEmptyBlock value: self
 ]
@@ -26,23 +26,29 @@ CTPersistentValueNode >> initializeValue: anObject next: aNode [
     ^ self
 ]
 
-{ #category : 'initialization' }
+{ #category : 'testing' }
 CTPersistentValueNode >> isEmpty [
     ^ false
 ]
 
-{ #category : 'initialization' }
+{ #category : 'accessing' }
 CTPersistentValueNode >> next [
     ^ next
 ]
 
-{ #category : 'initialization' }
+{ #category : 'private' }
 CTPersistentValueNode >> reverseOnto: anAccumulatorNode [
-    "Recursive case: push my value onto the accumulator, and tell the next node to continue"
-    ^ next reverseOnto: (anAccumulatorNode push: value)
+    "Iterative case: traverse down the node chain via a while loop, pushing values onto the accumulator without growing the call stack"
+    | current acc |
+    acc := anAccumulatorNode.
+    current := self.
+    [ current isEmpty ] whileFalse: [
+        acc := acc push: current value.
+        current := current next ].
+    ^ acc
 ]
 
-{ #category : 'initialization' }
+{ #category : 'evaluating' }
 CTPersistentValueNode >> value [
     ^ value
 ]

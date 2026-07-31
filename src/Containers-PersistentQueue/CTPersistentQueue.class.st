@@ -19,7 +19,7 @@ CTPersistentQueue class >> front: aFrontStack rear: aRearStack [
     ^ self basicNew initializeFront: aFrontStack rear: aRearStack
 ]
 
-{ #category : 'initialization' }
+{ #category : 'comparing' }
 CTPersistentQueue >> = anObject [
     "Two queues are equal if they have the same elements in the same order."
     self == anObject ifTrue: [ ^ true ].
@@ -28,7 +28,7 @@ CTPersistentQueue >> = anObject [
     ^ self asArray = anObject asArray
 ]
 
-{ #category : 'initialization' }
+{ #category : 'converting' }
 CTPersistentQueue >> asArray [
     "Extracts the queue's elements into a native Pharo array."
     | extracted |
@@ -37,7 +37,7 @@ CTPersistentQueue >> asArray [
     ^ extracted asArray
 ]
 
-{ #category : 'initialization' }
+{ #category : 'removing' }
 CTPersistentQueue >> dequeue [
     ^ frontStack 
         ifEmpty: [ 
@@ -58,7 +58,7 @@ CTPersistentQueue >> dequeue [
                 rear: rearStack) ]
 ]
 
-{ #category : 'initialization' }
+{ #category : 'enumerating' }
 CTPersistentQueue >> do: aBlock [
     "Evaluates aBlock for each element in the queue, perfectly preserving the historical state."
     | current currentState |
@@ -69,14 +69,14 @@ CTPersistentQueue >> do: aBlock [
         current := currentState value ]
 ]
 
-{ #category : 'initialization' }
+{ #category : 'adding' }
 CTPersistentQueue >> enqueue: anObject [
     ^ self class 
         front: frontStack 
         rear: (rearStack push: anObject)
 ]
 
-{ #category : 'initialization' }
+{ #category : 'comparing' }
 CTPersistentQueue >> hash [
     "Polymorphic hash based on content to match equality."
     ^ self class hash bitXor: self asArray hash
@@ -96,12 +96,12 @@ CTPersistentQueue >> initializeFront: aFrontStack rear: aRearStack [
     ^ self
 ]
 
-{ #category : 'initialization' }
+{ #category : 'testing' }
 CTPersistentQueue >> isEmpty [
     ^ frontStack isEmpty and: [ rearStack isEmpty ]
 ]
 
-{ #category : 'initialization' }
+{ #category : 'accessing' }
 CTPersistentQueue >> peek [
     ^ frontStack 
         ifEmpty: [ 
@@ -115,7 +115,7 @@ CTPersistentQueue >> peek [
             front value ]
 ]
 
-{ #category : 'initialization' }
+{ #category : 'removing' }
 CTPersistentQueue >> pop [
     "Returns only the next queue state"
     ^ frontStack 
@@ -134,7 +134,7 @@ CTPersistentQueue >> pop [
                 rear: rearStack ]
 ]
 
-{ #category : 'initialization' }
+{ #category : 'printing' }
 CTPersistentQueue >> printOn: aStream [
     "Standard Smalltalk printing for better debugger visibility."
     | isFirst |
@@ -151,7 +151,7 @@ CTPersistentQueue >> printOn: aStream [
     aStream nextPut: $)
 ]
 
-{ #category : 'initialization' }
+{ #category : 'accessing' }
 CTPersistentQueue >> size [
     "O(N) size calculation for now."
     | count |
